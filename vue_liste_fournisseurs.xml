@@ -1,5 +1,17 @@
 modifier la vue : liste fournisseur
 
+
+
+scarabet -> modifier la vue liste -> Onglet vue héritées -> Odoo studio: res.partner.tree customization -> Onglet Architecture (modification XML)
+
+j'ajoute la ligne suivante:
+  <xpath expr="//header" position="after">
+    <button name="Synchronisation_function" type="object" string="Synchroniser" class="btn-primary"/>
+  </xpath>
+  
+ dans tous le fichier suivant: 
+ 
+ 
 <data>
   <xpath expr="//field[@name='state_id']" position="replace"/>
   <xpath expr="//field[@name='display_name']" position="before">
