@@ -1,0 +1,51 @@
+modifier la vue : liste fournisseur
+
+<data>
+  <xpath expr="//field[@name='state_id']" position="replace"/>
+  <xpath expr="//field[@name='display_name']" position="before">
+    <field name="x_studio_date_field_QDHEM"/>
+    <field name="x_studio_mettre_a_jour" string="Mettre-a-jour"/>
+  </xpath>
+  <xpath expr="//field[@name='display_name']" position="after">
+    <field name="x_studio_total_factur" optional="hide"/>
+    <field name="property_payment_term_id" optional="hide" options="{&quot;no_create&quot;:true}"/>
+    <field name="create_date" optional="hide"/>
+    <field name="create_uid" optional="hide"/>
+  </xpath>
+  <xpath expr="//field[@name='function']" position="attributes">
+    <attribute name="invisible"/>
+    <attribute name="attrs">{}</attribute>
+    <attribute name="optional">hide</attribute>
+  </xpath>
+  <xpath expr="//field[@name='function']" position="after">
+    <field name="ref" optional="hide"/>
+    <field name="id" optional="hide"/>
+    <field name="x_studio_contact_role_ids" widget="many2many_tags" attrs="{}" optional="hide" options="{&quot;no_create&quot;:true}"/>
+    <field name="siret" optional="hide"/>
+  </xpath>
+  <xpath expr="//field[@name='phone']" position="attributes">
+    <attribute name="optional">hide</attribute>
+  </xpath>
+  <xpath expr="//field[@name='email']" position="attributes">
+    <attribute name="optional">hide</attribute>
+  </xpath>
+  <xpath expr="//field[@name='user_id']" position="after">
+    <field name="x_studio_segmentation" widget="many2many_tags" optional="hide" options="{&quot;no_create&quot;:true}"/>
+  </xpath>
+  <xpath expr="//field[@name='activity_ids']" position="after">
+    <field name="street" optional="hide"/>
+    <field name="street2" optional="hide"/>
+    <field name="zip" optional="hide"/>
+  </xpath>
+  <xpath expr="//field[@name='category_id']" position="attributes">
+    <attribute name="options">{"color_field": "color", "no_create": true}</attribute>
+  </xpath>
+</data>
+
+            
+
+
+
+
+
+
