@@ -2,6 +2,8 @@ modifier la vue : liste fournisseur
 
 j'ajoute le code suivant a la place
 
+
+id of button is : 1285
 <?xml version="1.0"?>
 <data>
 	<xpath expr="//tree" position="inside">
@@ -11,9 +13,20 @@ j'ajoute le code suivant a la place
 	</xpath>
 </data>	
 
-	<xpath expr="//header" position="inside">
-			<button name="Synchronisation_function" type="object" string="Synchroniser" class="btn-primary"/>
+  
+ <!--     l'ajout du boutton par dalil  --> 
+  <xpath expr="//tree" position="inside">
+        <button name="1285" type="action" string="Synchroniser Zeeendoc" class="btn-primary"/>
+  </xpath>
+<!--  Fin de l'ajout du boutton -->
+
+quand je crée une nouvelle ligne pour view:
+<?xml version="1.0"?>
+<data>
+	<xpath expr="//tree" position="inside">
+			<button name="1285" type="action" string="Synchroniser" class="btn-primary"/>
 	</xpath>
+</data>
 
 
 
