@@ -9,7 +9,16 @@ j'ajoute le code suivant a la place
 			<button name="Synchronisation_function" type="object" string="Synchroniser" class="btn-primary"/>
 		</header>
 	</xpath>
-</data>				
+</data>	
+
+	<xpath expr="//header" position="inside">
+			<button name="Synchronisation_function" type="object" string="Synchroniser" class="btn-primary"/>
+	</xpath>
+
+
+
+
+			
  
 <data>
   <xpath expr="//field[@name='state_id']" position="replace"/>
