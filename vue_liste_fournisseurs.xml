@@ -1,4 +1,15 @@
 modifier la vue : liste fournisseur 
+
+j'ajoute le code suivant a la place
+
+<?xml version="1.0"?>
+<data>
+	<xpath expr="//tree" position="inside">
+		<header>
+			<button name="Synchronisation_function" type="object" string="Synchroniser" class="btn-primary"/>
+		</header>
+	</xpath>
+</data>				
  
 <data>
   <xpath expr="//field[@name='state_id']" position="replace"/>
