@@ -2,8 +2,6 @@ modifier la vue : liste fournisseur
 
 j'ajoute le code suivant a la place
 
-
-id of button is : 1285
 <?xml version="1.0"?>
 <data>
 	<xpath expr="//tree" position="inside">
@@ -14,6 +12,11 @@ id of button is : 1285
 </data>	
 
   
+
+je crée une nouvelle server-action dans la configuration -> technical -> Server Actions avec un model: contact et le type: python code 
+donc dans l'url je récupère id of button is : 1285
+suivant la video : https://www.youtube.com/watch?v=HC6Zw8A_uXo
+or : https://www.youtube.com/watch?v=R8eG6uOxHKw
  <!--     l'ajout du boutton par dalil  --> 
   <xpath expr="//tree" position="inside">
         <button name="1285" type="action" string="Synchroniser Zeeendoc" class="btn-primary"/>

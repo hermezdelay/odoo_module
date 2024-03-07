@@ -3,20 +3,34 @@ from datetime import timedelta
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 import logging
+import requests
 
 _logger = logging.getLogger(__name__)
 
 
-class chargementFournisseur(models.Model):
+# class chargementFournisseur(models.Model):
+class fournisseur_chargement_zeendoc(models.Model):
     _inherit = "res.partner"
 
     def synchronisation_function(self):
-        suppliers = self.env['res.partner'].search([("supplier_rank", ">", 0])
+        # suppliers = self.env['res.partner'].search([("supplier_rank",">",0)])
 
-                                                    for supplier in suppliers
+        # for supplier in suppliers
+        # ValidationError(_('voulez-vous vraiment ?'))
+        url = "https://geo.api.gouv.fr/communes?"
+        params = {
+            'codePostal': '78000'
+        }
+        reponse = requests.get(url, params=params)
+        message = "Mise-a-jour avec succes : " + str(reponse.json())
         return {
-            'warning': {'title': "Warning", 'message': "Mise-a-jour de la liste de fournisseurs",
-                        'type': 'notification'},
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'message': message,
+                'type': 'success',
+                'sticky': False,
+            }
         }
 
         # res = super().create(vals)
