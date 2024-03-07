@@ -17,6 +17,8 @@ je crée une nouvelle server-action dans la configuration -> technical -> Server
 donc dans l'url je récupère id of button is : 1285
 suivant la video : https://www.youtube.com/watch?v=HC6Zw8A_uXo
 or : https://www.youtube.com/watch?v=R8eG6uOxHKw
+to display notification in Odoo: https://www.youtube.com/watch?v=naD0ybcE_pc
+
  <!--     l'ajout du boutton par dalil  --> 
   <xpath expr="//tree" position="inside">
         <button name="1285" type="action" string="Synchroniser Zeeendoc" class="btn-primary"/>
