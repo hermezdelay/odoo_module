@@ -33,7 +33,7 @@ class fournisseur_chargement_zeendoc(models.Model):
             'codePostal': '78000'
         }
         reponse = requests.get(url, params=params)
-         message = "Mise-a-jour avec succes : " + str(reponse.json())
+        # message = "Mise-a-jour avec succes : " + str(reponse.json())
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
