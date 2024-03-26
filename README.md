@@ -21,7 +21,7 @@ Compte Fournisseur custom_n4 -> Liste deroulante
 <User_Id>dc5acc73a7059968bc12e1500023d34d</User_Id> for hermez dalil
 <User_Id>dce7e842799c87494481f8827c2876a0</User_Id> for tests_webservices@zeendoc.com
 
-pour charger les web services je tappe l'url suivante dans le logiciel ReadyApi qui presente seulement 15 jours de periode d'evaluation:
+pour charger les web services je tappe l'url suivante dans le logiciel ReadyApi qui presente seulement 15 jours de periode d'evaluation donc je doit acheter une licence:
 https://armoires.zeendoc.com/systhen/ws/3_0/wsdl.php?WSDL
 Login : dalil.hermez@systhen.com
 Password : D@liSec201702
