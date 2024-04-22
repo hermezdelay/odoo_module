@@ -27,9 +27,11 @@ session = Session()
 session.auth = HTTPBasicAuth(username, password)
 client = Client(wsdl, transport=Transport(session=session))
 
+# ici je crée le token a l'aide du user et mdp standard de zeendoc
 Access_token = basic_auth(username, password)
 print("token = " + Access_token)
-#print(client.service.getUserList(UserId, Access_token))
+
+# ici je fais le login via le token que j'ai précédanment généré
 print("Appel au service web Login : " +
       client.service.login(username, "", password, Access_token))
 
@@ -37,19 +39,15 @@ id_armoire = 13547
 Coll_Id = "coll_3"
 Column_Name = "custom_n1"
 
-#List_Item1 = ['<List_Item>', [{'<id>': 16}, {'<Label>': 'Droits divers'}], '</List_Item>']
+#ici j'initialise la list-item à ajouter via le service web
 id_item = {'id': 12}
 Label_item = {'Label': 'Droits divers'}
 List_Item1 = ['List_Item', [id_item, Label_item]]
-#List_Item1.append['Label', "Droits divers"]
 
-#Items_List = ['Items_List', List_Item1]
+
 List_Item1 = [{"List_Item": {"Id": 44, "Label": "Modification des droits"}}]
-#print(List_Item1)
 
-#List_Item1.insert('id', '16')
-#List_Item1.insert('Label', "Droits divers")
 
-#Items_List = {List_Item1, List_Item2}
+# ici j'imprime le resultat retourné lors de l'appel du service web
 print("Appel au service web addItemsList: " + client.service.addItemsList(
     Coll_Id, Column_Name, List_Item1, Access_token))
