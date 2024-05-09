@@ -1,0 +1,77 @@
+pour demander un nouveau acces token je tape l'url suivante:
+https://armoires.zeendoc.com/systhen/Ihm/Account/Get_oAuth2_Token.php 
+
+voici les informations fournies:
+Get temporary code from user password	        Success	                Code = 9a2f0ee1ad333a271c0028ab957680ea9bdea91b
+Get Refresh Token from temporary code	        Success	                Refresh token = c0bfc3182d3ad50ea99a66796875a7c68477ccee
+Get Access Token from Refresh Token	            Success	                Access token = 1a85f8cc88a8f6ab1affe0da09373d383ff1eebc
+                                                                        Refresh token (renewed) = d48660841a258642fb1361eadca88c9d757c7630
+
+
+
+il existe 3 type de webservices:
+ 1- WS_Upload : pour déposer des documents dans une armoire Zeendoc
+ 2- • WS_Search : pour rechercher et consulter le contenu d’une armoire
+ 3- • WS_Login/WS_Archives : pour identifier les armoires auquel un couple de login/mot de passe donne accès
+
+WS_Search : est accessible via l'url
+https://armoires.zeendoc.com/[Url_Client]/ws/[Version_WebService]/Zeendoc.php
+
+[Url_Client] doit être remplacé par une chaine spécifique à chaque client dans notre cas c'est "systhen"
+
+[Version_WebService] 3_0
+
+
+
+
+
+
+Nom de l'armoire: 13547 | SYSTHEN
+Id du classeur: coll_118
+Nom du classeur : Usages | Dossiers Fournisseurs
+Compte Fournisseur custom_n4 -> Liste deroulante
+<User_Id>dc5acc73a7059968bc12e1500023d34d</User_Id> for hermez dalil
+<User_Id>dce7e842799c87494481f8827c2876a0</User_Id> for tests_webservices@zeendoc.com
+
+
+pour charger les web services je tappe l'url suivante dans le logiciel ReadyApi:
+https://armoires.zeendoc.com/systhen/ws/3_0/wsdl.php?WSDL
+Login : dalil.hermez@systhen.com
+Password : D@liSec201702
+
+
+
+
+
+/**************************************************************************************/
+le web service Archives:
+https://armoires.zeendoc.com/_WebServices/Archives/0_3/
+
+1- le compte de test:
+Login           :   tests_webservices@zeendoc.com
+Mot de passe    :   tests01 
+Url_Archives_clients    :   tests_webservices 
+Classeurs disponibles   :   coll_1 « Factures fournisseurs » 
+                            coll_2 « Documents administratifs » 
+                            coll_3 « Ressources Humaines »
+
+
+
+2- Liste des armoires disponibles et validation de l'identifiant:
+
+https://armoires.zeendoc.com/_WebServices/Archives/0_3/Archives_List.php
+
+Login           :   Identifiant (=adresse email) de l’utilisateur qui dépose le document 
+Exemple         :   tests_webservices@zeendoc.com
+Password        :   Mot de passe de l’utilisateur qui dépose le document 
+                    Exemple : tests01 
+Url_Archive     :   Identifiant de l’armoire 
+                    Ce paramètre n’est pas nécessaire, puisque l’objectif du script est justement d’obtenir la 
+                    liste des armoires auxquelles l’utilisateur a accès. On peut toutefois utiliser ce 
+                    paramètre pour valider que l’utilisateur a bien accès à cette armoire, et obtenir des 
+                    renseignements supplémentaires sur l’armoire. 
+Exemple         :   https://armoires.zeendoc.com/_WebServices/Archives/0_3/Archives_List.php?Login=tests_webservices@zeendoc.com&Password=tests01 
+
+
+
+
